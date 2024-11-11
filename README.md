@@ -1,7 +1,5 @@
 # XSS_Payloads2
 
-XSS payloads
-
 ## Array Notation  
 ```js
 window['alert']('Hello');
